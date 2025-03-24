@@ -1,28 +1,24 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { WeatherForecast } from './weather-forecast';
+import { environment } from '../environments/environment.development';
+import { NavBarComponent } from "./nav-bar/nav-bar.component";
 import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  standalone: true,
+  styleUrl: './app.component.scss',
+  imports: [
+    NavBarComponent,
+    RouterOutlet
+  ]
 })
-export class AppComponent {
-  public forecasts?: WeatherForecast[];
+export class AppComponent implements OnInit {
+  ngOnInit(): void {
 
-  constructor(http: HttpClient) {
-    http.get<WeatherForecast[]>('/weatherforecast').subscribe(result => {
-      this.forecasts = result;
-    }, error => console.error(error));
   }
 
-  title = 'angularapp';
-}
-
-interface WeatherForecast {
-  date: string;
-  temperatureC: number;
-  temperatureF: number;
-  summary: string;
+  title = 'domangular.client';
 }
