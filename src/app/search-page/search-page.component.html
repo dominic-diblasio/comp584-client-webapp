@@ -1,1 +1,30 @@
-<p>search-page works!</p>
+<h1 id="tableLabel">Browse Tournaments:</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+@if (tournaments) {
+
+<table>
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Temp. (C)</th>
+            <th>Temp. (F)</th>
+            <th>Summary</th>
+        </tr>
+    </thead>
+    <tbody>
+      @for (tournament of tournaments; track $index) {
+        <tr>
+          <td>Name: {{ tournament.name }}</td>
+          <td>Tournament: {{ tournament.gameId }}</td>
+          <td>${{ tournament.prizePool }}</td>
+        </tr>
+      }
+    </tbody>
+</table>
+
+}
+@else {
+  <p><em>Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationangular">https://aka.ms/jspsintegrationangular</a> for more details.</em></p>
+}
