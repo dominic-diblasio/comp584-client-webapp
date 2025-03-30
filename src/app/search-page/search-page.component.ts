@@ -19,7 +19,7 @@ export class SearchPageComponent {
   }
 
   getTournaments() {
-    this.http.get<Tournament[]>(`${environment.baseUrl}weatherforecast`).subscribe({
+    this.http.get<Tournament[]>(`${environment.baseUrl}api/Tournaments`).subscribe({
       next: result => this.tournaments = result,
       error: error => console.error(error)
     }

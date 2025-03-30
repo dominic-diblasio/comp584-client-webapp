@@ -1,1 +1,17 @@
-<p>profiles works!</p>
+<h1>Profile:</h1>
+@if (user) {
+    <h1>{{ user.username }}</h1>
+    <h2>{{ user.name }} | {{ user.region }}</h2>
+
+    <table>
+        <tbody>
+            <tr>
+              <td>Matches Won: {{ user.matchWins }}/{{ user.matchPlays }}</td>
+              <td>Tournaments Won: {{ user.tournamentWins }}/{{ user.tournamentPlays }}</td>
+            </tr>
+        </tbody>
+    </table>
+}
+@else {
+  <p><em>Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationangular">https://aka.ms/jspsintegrationangular</a> for more details.</em></p>
+}
