@@ -1,1 +1,9 @@
-<p>teams works!</p>
+<h1>Teams:</h1>
+@if (team) {
+    <h1>{{ team.name }}</h1>
+    <h2> Members: {{ team.maxMembers }} | Region: {{ team.region }}</h2>
+    <h3>Tournaments Won: {{ team.tournamentWins }}/{{ team.tournamentsEntered }}</h3>
+}
+@else {
+  <p><em>Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationangular">https://aka.ms/jspsintegrationangular</a> for more details.</em></p>
+}
