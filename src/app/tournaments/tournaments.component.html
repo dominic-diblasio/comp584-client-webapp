@@ -1,1 +1,9 @@
-<p>tournaments works!</p>
+@if (tournament) {
+    <h1>ID#{{ tournament.id }} | {{ tournament.name }}</h1>
+    <h2> Participating: {{ tournament.participatingTeams }}/{{ tournament.maxTeams }}</h2>
+    <h3>Prize Pool: ${{ tournament.prizePool }}</h3>
+    <h3>Start to end: {{ tournament.startTime }}-{{ tournament.endTime }}</h3>
+}
+@else {
+  <p><em>Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationangular">https://aka.ms/jspsintegrationangular</a> for more details.</em></p>
+}

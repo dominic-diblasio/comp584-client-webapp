@@ -4,12 +4,12 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 
 @Component({
-  selector: 'app-search-page',
+  selector: 'app-all-profiles',
   imports: [],
-  templateUrl: './search-page.component.html',
-  styleUrl: './search-page.component.css'
+  templateUrl: './all-profiles.component.html',
+  styleUrl: './all-profiles.component.css'
 })
-export class SearchPageComponent {
+export class AllProfilesComponent {
   public tournaments: Tournament[] = [];
 
   constructor(private http: HttpClient) {}

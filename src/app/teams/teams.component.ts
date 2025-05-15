@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'; // Use OnInit when creating fetched types
 import { TeamProfiles } from '../team-profiles';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../../environments/environment.development';
+import { environment } from '../../environments/environment';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 
 @Component({

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { environment } from '../environments/environment.development';
+import { environment } from '../environments/environment';
 import { NavBarComponent } from "./nav-bar/nav-bar.component";
 import { RouterOutlet } from '@angular/router';
 
