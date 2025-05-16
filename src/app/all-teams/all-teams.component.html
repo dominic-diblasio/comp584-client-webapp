@@ -1,1 +1,26 @@
-<p>all-teams works!</p>
+<h1>Teams:</h1>
+<p>Here's a list of all the teams, you can click ID to see additional details!</p>
+@if (teams) {
+  <table class='table table-striped' aria-labelledby="tableLabel">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Team Name</th>
+        <th>Region</th>
+        <th>Win-Rate</th>
+    </tr>
+    </thead>
+    <tbody>
+      @for (team of teams; track team.id) {
+        <tr ngFor="let user of users">
+          <td><a [routerLink]="[team.id]">{{ team.id }}</a></td>
+          <td>{{ team.name }}</td>
+          <td>{{ team.region }}</td>
+          <td>{{ team.tournamentsEntered }}/{{ team.tournamentWins }}</td>
+        </tr>  
+      }
+    </tbody>
+  </table>
+} @else {
+  <p><em>Loading...</em></p>
+}

@@ -12,7 +12,7 @@ export class AuthService {
 
   constructor(protected http: HttpClient) { }
 
-  public tokenKey: string = "token";
+  public tokenKey: string = "champs584_jwt";
   private _authStatus = new BehaviorSubject<boolean>(false);
   public authStatus = this._authStatus.asObservable();
 
@@ -30,6 +30,7 @@ export class AuthService {
     }
   }
 
+  // Ensures that we can properly log into the system
   login(item: LoginRequest): Observable<LoginResult> {
     var url = environment.baseUrl + "api/Admin/Login";
     return this.http.post<LoginResult>(url, item)        

@@ -1,26 +1,28 @@
 import { Component } from '@angular/core';
-import { Tournament } from '../tournament';
+import { UserProfiles } from '../user-profiles';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
-
+import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-all-profiles',
-  imports: [],
+  imports: [
+    RouterLink
+  ],
   templateUrl: './all-profiles.component.html',
   styleUrl: './all-profiles.component.css'
 })
 export class AllProfilesComponent {
-  public tournaments: Tournament[] = [];
+  public users: UserProfiles[] = [];
 
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    this.getTournaments();
+    this.getUsers();
   }
 
-  getTournaments() {
-    this.http.get<Tournament[]>(`${environment.baseUrl}api/Tournaments`).subscribe({
-      next: result => this.tournaments = result,
+  getUsers() {
+    this.http.get<UserProfiles[]>(`${environment.baseUrl}api/Users`).subscribe({
+      next: result => this.users = result,
       error: error => console.error(error)
     }
     );

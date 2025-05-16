@@ -6,7 +6,9 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-teams',
-  imports: [],
+  imports: [
+    RouterLink
+  ],
   templateUrl: './teams.component.html',
   styleUrl: './teams.component.css'
 })

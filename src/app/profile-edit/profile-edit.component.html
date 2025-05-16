@@ -1,0 +1,25 @@
+<div class="formHolder">
+    <h1>Edit</h1>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+  
+        <mat-form-field>
+            <mat-label>Username:</mat-label>
+            <input matInput formControlName="username" required="required" placeholder="Enter user name">
+        </mat-form-field>
+  
+        <mat-form-field>
+            <mat-label>Real Name:</mat-label>
+            <input matInput formControlName="name" required="required" placeholder="Enter actual name">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Region:</mat-label>
+            <input matInput formControlName="region" required="required" placeholder="Enter Region (3-letter)">
+        </mat-form-field>        
+
+        <div>
+            <button mat-flat-button color="primary" type="submit">Save</button>
+            <button mat-flat-button color="secondary" [routerLink]="['/profiles']">Cancel</button>
+        </div>
+    </form>
+  </div>

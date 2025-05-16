@@ -1,3 +1,4 @@
+<a color="primary" [routerLink]="['/profiles']">Go Back</a>
 <h1>Profile:</h1>
 @if (user) {
     <h1>{{ user.username }}</h1>
@@ -11,6 +12,9 @@
             </tr>
         </tbody>
     </table>
+
+    <a [routerLink]="['/profileEdit', user.id]">Edit {{ user.username }}'s profile</a>
+
 }
 @else {
   <p><em>Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationangular">https://aka.ms/jspsintegrationangular</a> for more details.</em></p>

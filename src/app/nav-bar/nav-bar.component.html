@@ -8,5 +8,11 @@
         <a mat-flat-button color="primary" [routerLink]="['/teams']">View Teams</a>
         <a mat-flat-button color="primary" [routerLink]="['/browse']">Browse</a>
         <span class="separator"></span>
-    </mat-toolbar>
+        @if (isLoggedIn) {
+          <a mat-flat-button color="primary" (click)="logout()">Logout</a>
+        }
+        @else {
+          <a mat-flat-button color="primary" [routerLink]="['/login']">Login</a>
+        }
+      </mat-toolbar>
   </header>

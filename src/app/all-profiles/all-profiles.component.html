@@ -1,1 +1,25 @@
-<p>all-profiles works!</p>
+<h1>Profiles:</h1>
+<p>Here's a list of all the users, you can click ID to see additional details!</p>
+<b>IT REQUIRES [AUTHORIZATION] TO SEE DETAILS - PLEASE LOG IN FOR ID</b>
+@if (users) {
+  <table class='table table-striped' aria-labelledby="tableLabel">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Region</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (user of users; track user.id) {
+        <tr ngFor="let user of users">
+          <td><a [routerLink]="[user.id]">{{ user.id }}</a></td>
+          <td>{{ user.username }}</td>
+          <td>{{ user.region }}</td>
+        </tr>  
+      }
+    </tbody>
+  </table>
+} @else {
+  <p><em>Loading...</em></p>
+}
